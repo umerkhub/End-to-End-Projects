@@ -21,12 +21,13 @@ from src.utils import save_obj, evaluate_models
 
 @dataclass
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.join("artifacts", "model.pkl")
+    trained_model_file_path:str = os.path.join("artifacts", "model.pkl")
 
 class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
     
+    def initiate_model_trainer(self, train_array, test_array):
         try:
             logging.info("Split Training and Testing Data")
             X_train, y_train, X_test, y_test = (
@@ -39,10 +40,10 @@ class ModelTrainer:
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighnors Regressor": KNeighborsRegressor(),
+                "K-Neighors Regressor": KNeighborsRegressor(),
                 "XGBRegressor": XGBRegressor(),
-                "CatBoosting": CatBoostRegressor(),
-                "AdaBoost": AdaBoostRegressor()
+                "CatBoosting Regressor": CatBoostRegressor(),
+                "AdaBoost Regressor": AdaBoostRegressor()
                 }
 
             params={

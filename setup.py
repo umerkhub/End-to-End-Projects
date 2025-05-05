@@ -24,5 +24,5 @@ version='0.0.1',
 author='Umer Khan',
 author_email='umairk2001@gmail.com',
 packages=find_packages(),
-install = get_requirements('requirements.txt')
+install_requires = get_requirements('requirements.txt')
 )
