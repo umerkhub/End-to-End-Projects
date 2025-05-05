@@ -15,7 +15,7 @@ from src.logger import logging
 from src.utils import save_obj
 
 class DataTransformatioConfig():
-    preprocesser_obj_file_path=os.path.join('artifacts', "preprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts', "preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -27,6 +27,7 @@ class DataTransformation:
             categorical_columns =[
                 "gender",
                 "race_ethnicity",
+                "lunch",
                 "parental_level_of_education",
                 "test_preparation_course",
             ]
@@ -92,24 +93,22 @@ class DataTransformation:
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test)
 
-            train_arr = np.c_[input_feature_test_arr, np.array(target_feature_train)]
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train)]
 
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test)]
 
             logging.info(f"Saved Preprocessing Object.")
 
             save_obj(
-                file_path=self.data_transformation_config.preprocesser_obj_file_path,
+                file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj= preprocessing_obj
             )
 
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocesser_obj_file_path,
+                self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e:
             raise CustomException(e, sys)
-
-
 
