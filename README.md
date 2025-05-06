@@ -26,29 +26,30 @@ This project is a complete end-to-end machine learning application built using P
 
 ## 🧱 Project Structure
 
-End-to-End-ML-Project/
-│
-├── app.py # Flask app entry point
-├── templates/
-│ └── home.html # Homepage with input form
-│ └── result.html # Result page with predictions
-│
-├── src/
-│ ├── Pipeline/
-│ │ ├── predict_pipeline.py # Prediction logic
-│ │ └── train_pipeline.py # Training logic
-│ ├── components/
-│ │ ├── data_ingestion.py # Load and split data
-│ │ ├── data_transformation.py # Transform features
-│ │ └── model_trainer.py # Train & save model
-│ ├── utils.py # Utility functions
-│ ├── exception.py # Custom exceptions
-│ └── logger.py # Logging setup
-│
-├── artifacts/ # Saved models & transformers
-├── static/ # CSS/JS files (optional)
-├── requirements.txt # Required packages
-└── README.md # Project description
+```plaintext
+        End-to-End-ML-Project/
+        │
+        ├── app.py # Flask app entry point
+        ├── templates/
+        │ └── home.html # Homepage with input form
+        │ └── result.html # Result page with predictions
+        │
+        ├── src/
+        │ ├── Pipeline/
+        │ │ ├── predict_pipeline.py # Prediction logic
+        │ │ └── train_pipeline.py # Training logic
+        │ ├── components/
+        │ │ ├── data_ingestion.py # Load and split data
+        │ │ ├── data_transformation.py # Transform features
+        │ │ └── model_trainer.py # Train & save model
+        │ ├── utils.py # Utility functions
+        │ ├── exception.py # Custom exceptions
+        │ └── logger.py # Logging setup
+        │
+        ├── artifacts/ # Saved models & transformers
+        ├── static/ # CSS/JS files (optional)
+        ├── requirements.txt # Required packages
+        └── README.md # Project description
 
 ---
 
