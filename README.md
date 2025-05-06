@@ -102,18 +102,18 @@ Models are trained and evaluated using:
 
 ## 📦 Setup Instructions
 
-# Step 1: Clone the repo
+### Step 1: Clone the repo
 git clone https://github.com/yourusername/End-to-End-ML-Project.git
 cd End-to-End-ML-Project
 
-# Step 2: Create a virtual environment
+### Step 2: Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-# Step 3: Install dependencies
+### Step 3: Install dependencies
 pip install -r requirements.txt
 
-# Step 4: Run the Flask app
+### Step 4: Run the Flask app
 python app.py
 
 ---
