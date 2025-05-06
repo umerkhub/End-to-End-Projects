@@ -26,7 +26,7 @@ This project is a complete end-to-end machine learning application built using P
 
 ## 🧱 Project Structure
 
-```plaintext
+```
         End-to-End-ML-Project/
         │
         ├── app.py # Flask app entry point
@@ -51,6 +51,7 @@ This project is a complete end-to-end machine learning application built using P
         ├── requirements.txt # Required packages
         └── README.md # Project description
 
+```
 ---
 
 ## 🛠 Technologies Used
