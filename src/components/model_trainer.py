@@ -40,7 +40,7 @@ class ModelTrainer:
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighors Regressor": KNeighborsRegressor(),
+                "K-Neighbors Regressor": KNeighborsRegressor(),
                 "XGBRegressor": XGBRegressor(),
                 "CatBoosting Regressor": CatBoostRegressor(),
                 "AdaBoost Regressor": AdaBoostRegressor()
@@ -51,6 +51,10 @@ class ModelTrainer:
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
                     # 'splitter':['best','random'],
                     # 'max_features':['sqrt','log2'],
+                },
+                "K-Neighbors Regressor": {
+                    'n_neighbors': [3, 5, 7],
+                    'weights': ['uniform', 'distance']
                 },
                 "Random Forest":{
                     # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -99,7 +103,7 @@ class ModelTrainer:
             if best_model_score < 0.6:
                 raise CustomException("No Best Model Found")
             
-            logging.info(f"Best Model on Training and Testing Dataset")
+            logging.info(f"Best Model on Training and Testing Dataset: {best_model}")
 
             save_obj(
                 file_path=self.model_trainer_config.trained_model_file_path,

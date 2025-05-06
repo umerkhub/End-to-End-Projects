@@ -32,19 +32,18 @@ class DataTransformation:
                 "test_preparation_course",
             ]
 
-            num_pipeline= Pipeline(
-                steps=[
-                    ("Imputer", SimpleImputer(strategy="median")),
-                    ("Scaler", StandardScaler())
+            num_pipeline = Pipeline(
+                    steps=[
+                        ("imputer", SimpleImputer(strategy="median")),
+                        ("scaler", StandardScaler(with_mean=False))
                 ]
             )
 
-            cat_pipeline=Pipeline(
-                steps=[
-                    ("Imputer",SimpleImputer(strategy="most_frequent")),
-                    ("ohe", OneHotEncoder()),
-                    ("scaler", StandardScaler())
-                ]
+            cat_pipeline = Pipeline(
+                    steps=[
+                    ("imputer", SimpleImputer(strategy="most_frequent")),
+                    ("ohe", OneHotEncoder(handle_unknown='ignore'))  # No scaler here (optional)
+                        ]
             )
 
             logging.info("Standard Scaling for Numerical values Complete")
